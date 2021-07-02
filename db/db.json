@@ -1,54 +1,5 @@
 {
   "notes": [
-    {
-      "id": 10,
-      "title": "Test Title",
-      "text": "Test text"
-    },
-    {
-      "id": "22",
-      "title": "Test Title",
-      "text": "Test text"
-    },
-    {
-      "title": "Yayy",
-      "text": "Hiyyaaaa",
-      "id": "23"
-    },
-    {
-      "title": "Yayy",
-      "text": "Hiyyaaaa",
-      "id": "24"
-    },
-    {
-      "title": "Yayy",
-      "text": "Hiyyaaaa",
-      "id": "25"
-    },
-    {
-      "title": "Yayy",
-      "text": "Hiyyaaaa",
-      "id": "26"
-    },
-    {
-      "title": "Yayy",
-      "text": "Hiyyaaaa",
-      "id": "27"
-    },
-    {
-      "title": "Yayy",
-      "text": "Hiyyaaaa",
-      "id": "28"
-    },
-    {
-      "title": "Yayy",
-      "text": "Hiyyaaaa",
-      "id": "29"
-    },
-    {
-      "title": "Yayy",
-      "text": "Hiyyaaaa",
-      "id": "30"
-    }
+
   ]
 }

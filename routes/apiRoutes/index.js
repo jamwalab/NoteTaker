@@ -1,6 +1,6 @@
 //-----DECLATATIONS-----//
 const router = require('express').Router();
-const {getNewId, validateNote, saveNote} = require('../../lib/notes');
+const {getNewId, validateNote, saveNote, deleteNote} = require('../../lib/notes');
 const {notes} = require('../../db/db.json');
 
 //-----API ROUTE - NOTES GET STATEMENT-----//
@@ -22,6 +22,14 @@ router.post('/notes', (req, res) => {
     const newNote = saveNote(req.body, notes);
     res.json(notes)
   }  
+});
+
+//-----API ROUTE - NOTES POST STATEMENT-----//
+router.delete('/notes/:id', (req, res) => {
+  console.log(req.params.id);
+  const newNotesArray = deleteNote(req.params.id, notes);
+  const newNote = saveNote('', newNotesArray);
+  res.json(notes)
 });
 
 module.exports = router;
