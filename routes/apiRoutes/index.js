@@ -19,17 +19,18 @@ router.post('/notes', (req, res) => {
     res.status(400).send('New note is blank or not properly formatted');
   }
   else {
-    const newNote = saveNote(req.body, notes);
-    res.json(notes)
+    const newNotes = saveNote(req.body, notes);
+    res.json(newNotes)
   }  
 });
 
 //-----API ROUTE - NOTES POST STATEMENT-----//
 router.delete('/notes/:id', (req, res) => {
-  console.log(req.params.id);
+  //send id and array to delete function
   const newNotesArray = deleteNote(req.params.id, notes);
-  const newNote = saveNote('', newNotesArray);
-  res.json(notes)
+  //save to db
+  const newNotes = saveNote('', newNotesArray);
+  res.json(newNotes)
 });
 
 module.exports = router;
