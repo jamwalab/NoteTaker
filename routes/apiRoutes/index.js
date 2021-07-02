@@ -1,6 +1,6 @@
 //-----DECLATATIONS-----//
 const router = require('express').Router();
-const {getNewId} = require('../../lib/notes');
+const {getNewId, validateNote, saveNote} = require('../../lib/notes');
 const {notes} = require('../../db/db.json');
 
 //-----API ROUTE - NOTES GET STATEMENT-----//
@@ -14,7 +14,14 @@ router.post('/notes', (req, res) => {
   let newId = getNewId(notes);
   //add id to the new note object
   req.body.id = newId.toString();
-  res.json(req.body)
-})
+  //Check note format
+  if (!validateNote(req.body)) {
+    res.status(400).send('New note is blank or not properly formatted');
+  }
+  else {
+    const newNote = saveNote(req.body, notes);
+    res.json(notes)
+  }  
+});
 
 module.exports = router;
